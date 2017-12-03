@@ -1,0 +1,99 @@
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>留言板</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.css" >
+<script src="/mbook/public/static/JQM/jquery-1.11.1.min.js"></script>
+<script src="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.js"></script>
+<style>
+body {
+  margin: 0 auto;
+  text-align:center;
+  padding:0;
+}
+div, ul, li, dl, dt, dd, h1, h2, h3, h4, p {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+a {
+  text-decoration:none;
+}
+
+.ui-bar-f
+{
+background-color:#FF6;
+border:#FF0 1px solid;
+}
+.ui-bar-f .ui-btn
+{
+background-color:#FC0;
+}
+.ui-bar-f .ui-btn:hover
+{
+background-color:#FC9;
+}
+.ui-body-f
+{
+background-color:#FFC;
+}
+.ui-body-f .ui-btn
+{
+  background-color:#FC0;
+}
+.ui-body-f .ui-btn:hover
+{
+  background-color:#FC0;
+}
+
+</style>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header" data-theme="f">
+  <h1>意见反馈-留言板</h1>
+    <a href="../Index/index.html" data-ajax="false" data-role="button" data-icon="home">首页</a><a href="{:url('user/loginout')}" data-ajax="false" data-role="button" data-icon="info">退出登陆</a>
+  </div>
+  <div data-role="content" data-theme="f">
+    <div data-role="collapsible" data-collapsed="false">
+      <h1 >查看他人反馈</h1>
+      <div>
+              {volist name='r' id='m'}
+
+            <div data-role="fieldcontain">
+              <label for="username"><span style="color:#F00"> 留言者: </span>{$m.user_name}</label>
+                  
+            </div>
+            <div data-role="fieldcontain">
+              <label for="message"><span style="color:#F00"> 留言: </span>{$m.user_message}</label>
+                  
+            </div>
+                <hr>
+             {/volist}
+      </div>
+    </div>
+    <div data-role="collapsible" data-collapsed="false">
+      <h1>留下你的意见</h1>
+      <div class="ui-grid-b">
+              <form name="RegForm" method="post" action="insertmessagedo" data-ajax="false">
+                  <div data-role="fieldcontain">
+                    <label for="message"> 留言 </label>
+                    <input name="message" id="message"  value="" type="text" required>
+                  </div>
+                  <div>
+                    <input data-inline="true" type="submit" name="submit" value="提交"  />
+                  </div>
+              </form>
+      </div>
+    </div>
+  </div>
+  <div data-role="footer" data-theme="f">
+    <h1>机电书店</h1>
+  </div>
+</div>
+</body>
+</html>

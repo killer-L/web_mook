@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人信息</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.css" >
+<script src="/mbook/public/static/JQM/jquery-1.11.1.min.js"></script>
+<script src="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.js"></script>
+<style>
+body {
+  margin: 0 auto;
+  text-align:center;
+  padding:0;
+}
+div, ul, li, dl, dt, dd, h1, h2, h3, h4, p {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+a {
+  text-decoration:none;
+}
+
+ .ui-bar-f
+{
+background-color:#FF6;
+border:#FF0 1px solid;
+}
+</style>
+</head>
+
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header" data-theme="f"> 
+      <a href="../Index/index.html" data-ajax="false" data-role="button" data-icon="home">首页</a>
+
+    <h3 id="reg"> 个人信息 （*号为不可修改内容）</h3>
+  </div>
+  <div data-role="content">
+    <form name="RegForm" method="post" action="editdo" data-ajax="false">
+      <div data-role="fieldcontain">
+        <label for="username"> 用户名（*） </label>
+        <input name="username" id="username"  value="<?=$username?>" type="text" readonly="readonly" required>
+      </div>
+      <div data-role="fieldcontain">
+      <div data-role="fieldcontain">
+        <label for="username"> 性别（*） </label>
+        <input name="username" id="username"  value="{$r[0]['user_sex']}" type="text" readonly="readonly" required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="email"> 邮箱（*） </label>
+        <input name="email" id="email"  value="{$r[0]['user_email']}" readonly="readonly" type="email">
+      </div>
+      <div data-role="fieldcontain">
+        <label for="qq"> 您的qq是 </label>     
+        <input name="qq" id="qq"  value="{$r[0]['user_qq']}" type="text" required>
+
+      </div>
+      <div data-role="fieldcontain">
+        <label for="phone"> 您的联系电话是 </label>        
+        <input name="phone" id="phone"  value="{$r[0]['user_tel']}" type="text" required>
+
+      </div>
+      <div data-role="fieldcontain">
+        <label for="address"> 您的地址是 </label>        
+        <input name="address" id="address"  value="{$r[0]['user_address']}" type="text" required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="address"> 重要信息修改 </label>        
+        <a data-inline="true" data-ajax="false"  data-role="button"  href="newpsw.html"> 修改密码 </a> 
+      </div>
+      <div >
+        <input data-inline="true" type="submit" name="submit" value="提交"  />
+        <a data-inline="true"  data-role="button" data-ajax="false"  href="../Index/index.html"> 取消 </a> 
+      </div>
+    </form>
+  </div>
+  <div data-role="footer" data-theme="f">
+    <h1>机电书店</h1>
+  </div>
+</div>
+</body>
+</html>

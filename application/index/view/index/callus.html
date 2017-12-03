@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>联系我们</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.css" >
+<script src="/mbook/public/static/JQM/jquery-1.11.1.min.js"></script>
+<script src="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.js"></script>
+<style>
+body {
+  margin: 0 auto;
+  text-align:center;
+  padding:0;
+}
+div, ul, li, dl, dt, dd, h1, h2, h3, h4, p {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+a {
+  text-decoration:none;
+}
+
+ .ui-bar-f
+{
+background-color:#FF6;
+border:#FF0 1px solid;
+}
+</style>
+</head>
+
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header" data-theme="f"> 
+    <h3 id="reg"> 联系我们 </h3>
+          <a href="../Index/index.html" data-ajax="false" data-role="button" data-icon="home">首页</a>
+
+  </div>
+  <div data-role="content">
+    <form name="RegForm" method="post" action="newpswdo" data-ajax="false">
+      <div data-role="fieldcontain">
+        <label for="qq"> 我们的客服qq：</label>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="qq"> &nbsp;&nbsp;&nbsp;&nbsp;123456789 </label>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="phone"> 我们的客服电话：</label>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="phone"> &nbsp;&nbsp;&nbsp;&nbsp;123456789 </label>
+      </div>
+    </form>
+  </div>
+  <div data-role="footer" data-theme="f">
+    <h1>机电书店</h1>
+  </div>
+</div>
+
+</body>
+</html>
