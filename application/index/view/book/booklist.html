@@ -7,6 +7,14 @@
 <link rel="stylesheet" href="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.css" >
 <script src="/mbook/public/static/JQM/jquery-1.11.1.min.js"></script>
 <script src="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    var items = document.getElementsByTagName("a");
+    for(var i=0;i<items.length;i++){
+      items[i].setAttribute('data-ajax',false);
+    }
+  })
+</script>
 <style>
 body {
   margin: 0 auto;
@@ -49,6 +57,7 @@ border:#FF0 1px solid;
              </li>
         {/volist}
      </ul>
+     <div>{$page}</div>
   </div>
   <div data-role="footer" data-theme="f">
     <h1>机电书店</h1>

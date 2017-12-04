@@ -62,7 +62,7 @@ class User extends \think\Controller
 				$username=$data['user_name'];
 				session('username',$username);
 				$this->assign('user_name',$data['user_name']);	
-				$this->success("<h1>登录成功</h1>","index/index/index");
+				$this->success("<h1>登录成功</h1>","index/index/index2");
 			}else{
 				$this->error("登录失败");
 			}
@@ -77,7 +77,7 @@ class User extends \think\Controller
     public function loginout()
     {
         session(null);
-        $this->success('退出成功', url("index/user/login"));
+        $this->success('退出成功', url("index/index/index"));
     }
 
 //忘记密码
@@ -141,7 +141,7 @@ class User extends \think\Controller
 		$data['user_address']=$address;
 
 		$u->where('user_name',$username)->update($data); 
-		$this->success("<h1>修改成功</h1>","index/index/index");
+		$this->success("<h1>修改成功</h1>","index/index/index2");
 
    	}
 

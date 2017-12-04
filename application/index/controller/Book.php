@@ -21,8 +21,11 @@ class Book extends \think\Controller
 
     public function booklist(){
 		$book=new \app\index\model\Book();
-		$data= $book->where('s_id', input('get.sid'))->select();
-		$this->assign('blist',$data);	
+		$data= $book->where('s_id', input('get.sid'))->
+        paginate(3,false,['query'=>['sid'=>input('get.sid')]]);
+        $page = $data->render();
+		$this->assign('blist',$data);
+        $this->assign('page',$page);   	
 		//dump($data);	
 		return $this->fetch();
 	}

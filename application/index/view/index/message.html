@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.css" >
 <script src="/mbook/public/static/JQM/jquery-1.11.1.min.js"></script>
 <script src="/mbook/public/static/JQM/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    var items = document.getElementsByTagName("a");
+    for(var i=0;i<items.length;i++){
+      items[i].setAttribute('data-ajax',false);
+    }
+  })
+</script>
 <style>
 body {
   margin: 0 auto;
@@ -56,7 +64,7 @@ background-color:#FFC;
 <div data-role="page">
   <div data-role="header" data-theme="f">
   <h1>意见反馈-留言板</h1>
-    <a href="../Index/index.html" data-ajax="false" data-role="button" data-icon="home">首页</a><a href="{:url('user/loginout')}" data-ajax="false" data-role="button" data-icon="info">退出登陆</a>
+    <a href="../Index/index2.html" data-ajax="false" data-role="button" data-icon="home">首页</a><a href="{:url('user/loginout')}" data-ajax="false" data-role="button" data-icon="info">退出登陆</a>
   </div>
   <div data-role="content" data-theme="f">
     <div data-role="collapsible" data-collapsed="false">
@@ -74,6 +82,7 @@ background-color:#FFC;
             </div>
                 <hr>
              {/volist}
+            {$page}
       </div>
     </div>
     <div data-role="collapsible" data-collapsed="false">
