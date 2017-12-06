@@ -9,8 +9,7 @@ class User extends \think\Controller
 	}
 
     public function insert2(){
-    						session(null); 
-
+    	session(null); 
     	$data['user_name']=\think\Request::instance()->post('username'); // 获取某个post变量username
 		$data['user_pwd']=input('post.password');
 		$data['repass']=input('post.repass');
@@ -165,7 +164,7 @@ class User extends \think\Controller
 			if (md5($newpassword)==md5($password1)){
 					$data['user_pwd']=md5($newpassword);
 					$data['user_truepwd']=$newpassword;
-					$u->where('user_name',$username)->update($data); // 更新数据库
+					$u->where('user_name',$username)->update($data); 
 					$this->assign('username',$username);	
 					session(null); 
 					$this->success("<h1>修改成功，请登录</h1>","index/user/login");
