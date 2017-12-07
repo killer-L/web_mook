@@ -59,7 +59,7 @@ background-color:#FFC;
 <body>
 <div data-role="page">
   <div data-role="header" data-theme="f">
-  <h1>欢迎访问我的书店</h1>
+  <h1>欢迎 <span style="color:#F00"><?=$username?></span> 访问我的书店</h1>
     <a href="../user/message" data-ajax="false" data-role="button" data-icon="info">个人信息</a>
     <a href="{:url('user/loginout')}" data-ajax="false" data-role="button" data-icon="info">退出登陆</a>
   </div>
@@ -67,11 +67,19 @@ background-color:#FFC;
     <div data-role="collapsible" data-collapsed="false">
       <h1 >今日特价</h1>
       <div>
+      {if (!isset($username))}
         <form action="../user/login"  data-ajax="false" >          
-                       <br><span>请登录查看更多信息</span><br><br>
-
-                        <input data-inline="true" type="submit" name="submit" value="登录"  />
-</form>
+          <br><span>请登录查看更多信息</span><br><br>
+           <input data-inline="true" type="submit" name="submit" value="登录"  />
+        </form>
+        {else}
+         <h1 >今日特价</h1>
+      <div>
+         <a href='#' data-ajax="false"> <img src="/mbook/public/static/images/{$tejiabook.book_img}" /> <br/>
+        {$tejiabook.book_name}<br/>
+        <span>￥{$tejiabook.book_newprice}</span> </a>
+      </div>
+      {/if}
       </div>
     </div>
     <div data-role="collapsible" data-collapsed="false">

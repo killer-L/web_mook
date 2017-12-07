@@ -61,7 +61,7 @@ class User extends \think\Controller
 				$username=$data['user_name'];
 				session('username',$username);
 				$this->assign('user_name',$data['user_name']);	
-				$this->success("<h1>登录成功</h1>","index/index/index2");
+				$this->success("<h1>登录成功</h1>","index/index/index");
 			}else{
 				$this->error("登录失败");
 			}
@@ -121,7 +121,12 @@ class User extends \think\Controller
 
    		$u=new \app\index\model\User();
    		$username= session('username');
+   		if(!isset($username)){
+			$this->error("未登录");
+
+   		}else{
    		$r = $u->where('user_name',$username)->select();
+   		}
    		$this->assign('r',$r);	
 		$this->assign('username',$username);	
    		return $this->fetch();
@@ -140,7 +145,7 @@ class User extends \think\Controller
 		$data['user_address']=$address;
 
 		$u->where('user_name',$username)->update($data); 
-		$this->success("<h1>修改成功</h1>","index/index/index2");
+		$this->success("<h1>修改成功</h1>","index/index/index");
 
    	}
 
